@@ -25,6 +25,7 @@ DROP TABLE AObserve;
 DROP TABLE Observation;
 DROP TABLE Observateur;
 DROP TABLE Lieu;
+DROP TABLE Utilisateur;
 
 
 CREATE TABLE Lieu (
@@ -222,4 +223,13 @@ CREATE TABLE Obs_Batracien(
     CONSTRAINT dom_especeBatracien CHECK (espece IN ('calamite', 'pelodyte')),
     CONSTRAINT fk_ObsBatracien_Observation FOREIGN KEY (obsB) REFERENCES Observation(idObs),
     CONSTRAINT pk_ObsBatracien PRIMARY KEY (obsB,espece)
+);
+
+CREATE TABLE Utilisateur(
+    idUtilisateur INTEGER,
+    nom VARCHAR(50),
+    mdpUtilisateur VARCHAR(50),
+    permission INTEGER,
+
+    CONSTRAINT pk_Utilisateur PRIMARY KEY (nom)
 );
