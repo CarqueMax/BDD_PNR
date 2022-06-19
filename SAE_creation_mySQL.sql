@@ -226,10 +226,10 @@ CREATE TABLE Obs_Batracien(
 );
 
 CREATE TABLE Utilisateur(
-    idUtilisateur INTEGER,
     nom VARCHAR(50),
     mdpUtilisateur VARCHAR(50),
     permission INTEGER,
+    prenom VARCHAR(50),
 
     CONSTRAINT pk_Utilisateur PRIMARY KEY (nom)
 );
